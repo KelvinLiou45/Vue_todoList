@@ -1,0 +1,113 @@
+@import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Sans:wght@400;700&display=swap");
+
+$colorMainBlack: #242424;
+$colorMainWhite: rgb(245, 245, 245);
+$fontMainFamily: "Noto Sans TC", "Noto Sans", sans-serif;
+
+@mixin displayFlex($dir: row, $jus: center, $ali: center) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+#app {
+  @include displayFlex();
+  font-family: $fontMainFamily;
+  color: $colorMainBlack;
+  height: 100vh;
+  width: 100vw;
+}
+
+.todoList {
+  background: $colorMainWhite;
+  width:350px;
+  .todoList_title {
+    @include displayFlex();
+    font-size: 30px;
+    margin: 20px 0;
+  }
+  .todoList_inputTodo {
+    input[type="text"] {
+      font-size: 16px;
+      line-height: 20px;
+      padding: 8px;
+      font-family: $fontMainFamily;
+    }
+    input[type="button"] {
+      border: none;
+      background: $colorMainBlack;
+      color: $colorMainWhite;
+      font-size: 16px;
+      padding: 8px;
+      line-height: 20px;
+      font-family: $fontMainFamily;
+    }
+  }
+  .todoList_typeChoice {
+    margin-top: 20px;
+    border-bottom: 2px solid $colorMainBlack;
+    input[type="button"] {
+      border: none;
+      background: $colorMainWhite;
+      color: $colorMainBlack;
+      font-size: 16px;
+      padding: 8px;
+      line-height: 20px;
+      font-family: $fontMainFamily;
+      box-sizing: border-box;
+      &.active {
+        background: $colorMainBlack;
+        color: $colorMainWhite;
+      }
+    }
+  }
+  .todoList_showTodo {
+    margin-bottom: 50px;
+    height:250px;
+    width:100%;
+    box-sizing:border-box;
+    overflow:scroll;
+    overflow-x:hidden;
+    overflow-y:auto;
+    ul {
+      li {
+        @include displayFlex(row, space-between);
+        flex-wrap:wrap;
+        border-bottom: 1px solid $colorMainBlack;
+        box-sizing:border-box;
+        padding: 10px;
+        input[type=text]{
+            font-family: $fontMainFamily;
+            font-size:16px;
+            border:none;
+            background:none;
+            line-height:20px;
+        }
+        .finishY {
+          color: green;
+          text-decoration: line-through;
+        }
+        a{
+            color:$colorMainBlack;
+            margin-right:5px;
+        }
+      }
+    }
+  }
+  .todoList_control {
+    @include displayFlex(row, flex-end);
+    width: 100%;
+    input[type="button"] {
+      border: none;
+      background: $colorMainBlack;
+      color: $colorMainWhite;
+      font-size: 16px;
+      padding: 8px;
+      line-height: 20px;
+      font-family: $fontMainFamily;
+      margin-left: 10px;
+    }
+  }
+}

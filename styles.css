@@ -1,0 +1,96 @@
+@import url(reset.css);
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Sans:wght@400;700&display=swap");
+#app {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: "Noto Sans TC", "Noto Sans", sans-serif;
+  color: #242424;
+  height: 100vh;
+  width: 100vw; }
+
+.todoList {
+  background: whitesmoke;
+  width: 350px; }
+  .todoList .todoList_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin: 20px 0; }
+  .todoList .todoList_inputTodo input[type="text"] {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 8px;
+    font-family: "Noto Sans TC", "Noto Sans", sans-serif; }
+  .todoList .todoList_inputTodo input[type="button"] {
+    border: none;
+    background: #242424;
+    color: whitesmoke;
+    font-size: 16px;
+    padding: 8px;
+    line-height: 20px;
+    font-family: "Noto Sans TC", "Noto Sans", sans-serif; }
+  .todoList .todoList_typeChoice {
+    margin-top: 20px;
+    border-bottom: 2px solid #242424; }
+    .todoList .todoList_typeChoice input[type="button"] {
+      border: none;
+      background: whitesmoke;
+      color: #242424;
+      font-size: 16px;
+      padding: 8px;
+      line-height: 20px;
+      font-family: "Noto Sans TC", "Noto Sans", sans-serif;
+      box-sizing: border-box; }
+      .todoList .todoList_typeChoice input[type="button"].active {
+        background: #242424;
+        color: whitesmoke; }
+  .todoList .todoList_showTodo {
+    margin-bottom: 50px;
+    height: 250px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: auto; }
+    .todoList .todoList_showTodo ul li {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #242424;
+      box-sizing: border-box;
+      padding: 10px;
+      width: 100%; }
+      .todoList .todoList_showTodo ul li input[type=text] {
+        font-family: "Noto Sans TC", "Noto Sans", sans-serif;
+        font-size: 16px;
+        border: none;
+        background: none;
+        line-height: 20px; }
+      .todoList .todoList_showTodo ul li .finishY {
+        color: green;
+        text-decoration: line-through; }
+      .todoList .todoList_showTodo ul li a {
+        color: #242424;
+        margin-right: 5px; }
+  .todoList .todoList_control {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%; }
+    .todoList .todoList_control input[type="button"] {
+      border: none;
+      background: #242424;
+      color: whitesmoke;
+      font-size: 16px;
+      padding: 8px;
+      line-height: 20px;
+      font-family: "Noto Sans TC", "Noto Sans", sans-serif;
+      margin-left: 10px; }
+
+/*# sourceMappingURL=styles.css.map */
