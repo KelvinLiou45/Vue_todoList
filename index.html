@@ -48,11 +48,16 @@
                         <li v-else-if="typeChoice == todoList.finish">
                             <div>
                                 <input type="checkbox" v-model="todoList.finish">
-                                <span v-bind:class="{finishY:todoList.finish}">{{todoList.name}}</span>
+                                <!--看changeAble為true or false-->
+                                <span v-bind:class="{finishY:todoList.finish}" v-if="!todoList.changeAble">{{todoList.name}}</span>
+                                <input type="text" v-model="todoList.name"  v-else-if="todoList.changeAble">
                             </div>
                             <div>
-                                <a href="">修改</a>
-                                <a href="" v-on:click.prevent="delTodoList(todoList)">刪除</a>
+                                <!--看changeAble為true or false-->
+                                <a href="" v-if="!todoList.changeAble" v-on:click.prevent="changeChangeAble(todoList)">修改</a>
+                                <a href="" v-else-if="todoList.changeAble" v-on:click.prevent="changeChangeAble(todoList)">確認</a>
+                                
+                                <a href="" v-on:click.prevent="delTodoList(todoList)"> 刪除</a>
                             </div>
                         </li>
                     </div>
